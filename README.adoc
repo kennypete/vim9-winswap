@@ -154,7 +154,7 @@ of `start`, then include `packadd vim9-winswap` in your .vimrc/_vimrc.
 === vim-plug
 
 Add to your .vimrc/_vimrc, with your other
-plugins, `Plug 'kennypete/vim9-winswap`.
+plugins, `Plug 'kennypete/vim9-winswap'`.
 
 == BSD Zero Clause License
 
