@@ -119,7 +119,7 @@ export def SwapByWinNums(win1: string, win2: string): void
   endif
   const W1: number = str2nr(win1)
   const W2: number = str2nr(win2)
-  const TOTAL_WINDOWS = winnr('$')
+  const TOTAL_WINDOWS: number = winnr('$')
   if W1 < 1 || W1 > TOTAL_WINDOWS || W2 < 1 || W2 > TOTAL_WINDOWS
     echo $"Invalid window numbers. Valid range: 1-{TOTAL_WINDOWS}"
     return
