@@ -1,0 +1,136 @@
+*winswap.txt*
+                                VIM9-WINSWAP
+
+1. About                                                   |winswap-about|
+2. Overview                                             |winswap-overview|
+3. Commands                                             |winswap-commands|
+4. Mappings                                             |winswap-mappings|
+5. Licence                                               |winswap-licence|
+
+=============================================================================
+
+1. ABOUT ~
+                                                                *winswap-about*
+
+vim9-winswap is a Vim9 script plugin.  It enables you to either swap or
+clone Vim windows efficiently.
+
+Vim's built-in window commands like CTRL-W r, CTRL-W x, and CTRL-W T
+work well in many scenarios.  However, there are limitations, which include
+window resizing and, for some commands like CTRL-W x, sometimes mental
+calculation of the Nth window is needed. Also, there is no ability to move
+windows to another existing tab.
+
+What vim9-winswap enables is:
+
+1. Swapping a chosen window with any other window, including windows in other
+   existing tabs, and
+2. Putting (cloning) a chosen window into any other window, leaving the
+   "yanked" window as-is.
+3. Using command, :Winswap, which will swap two specified windows.
+
+In both instances:
+* Local options are carried across to the moved or cloned window. That is,
+  options like |'list'|, |'colorcolumn'|, and |'spell'|, which are exclusively
+  window-local.
+* The state of the marked/"yanked" window is cleared following a swap or put.
+
+----
+Similar legacy plugin: 
+https://github.com/wesQ3/vim-windowswap is a legacy vimscript plugin, which
+provides similar functionality for swapping windows and the (optional) swap
+keys, <Leader>ww, have been used.  That legacy plugin does not address
+ensuring local settings are carried across, however, among other things
+improved in this Vim9 script plugin.
+----
+
+
+2. OVERVIEW ~
+                                                             *winswap-overview*
+
+To swap two windows:
+
+1. Navigate to the first window you want to swap
+2. Press <Leader>ww to mark that window and remember its settings
+3. Navigate to the second window you want to swap with the first
+4. Press <Leader>ww again to swap the windows
+
+For putting (cloning) windows:
+
+1. Navigate to the window you want to clone
+2. Press <Leader>ww to mark the window and remember its settings
+3. Navigate to the window you want to substitute
+4. Press <Leader>wp to substitute the window with the cloned content
+
+Note: The <Leader> mappings, above, are enabled by g:winswap_opt_maps = true
+      Put that in your .vimrc if you want to use them - they are not "on" by
+      default.  If you want to map your own keys, see |THIS|.
+
+
+3. COMMANDS ~
+                                                             *winswap-commands*
+
+If you know the window numbers of the two windows you want to swap, you can
+use the :Winswap command:
+>
+  :Winswap 4 2
+<
+This will swap windows 4 and 2. The command accepts any two valid window
+numbers (though only in the same tab).
+
+For convenience, there is command abbreviation Ws, which expands to Winswap.
+
+
+4. MAPPINGS ~
+                                                             *winswap-mappings*
+
+3.1. Using g:winswap_opt_maps ~
+                                                             *winswap-opt-maps*
+
+If you are satisfied using <Leader>ww and <Leader>wp (see |winswap-overview|),
+all you need to do is include the following in your .vimrc/_vimrc: >
+
+  g:winswap_opt_maps = true
+
+3.2. <Plug> mappings and customising your mappings ~
+                                                          *winswap-custom-maps*
+There are only two mappings, both of which work only in Normal mode.
+They are <Plug> mappings, so they should not conflict with anything:
+
+*winswap-<Plug>(Winswap_ww)*
+If there is no currently marked window, this marks it as the window that will
+either be swapped or put/cloned.  If there already is a currently marked
+window, it swaps the two windows.
+
+*winswap-<Plug>(Winswap_wp)*
+Provided there is a currently marked window, this will put it (clone it to)
+where the current window is.
+
+If you want to map either or both of the `<Plug>` mappings to keys of your
+own choosing, it is easy.  For example: >
+
+  nnoremap <C-W>2 <Plug>(Winswap_ww)
+  nnoremap <C-W>1 <Plug>(Winswap_wp)
+<
+Now <C-W>2 will do the same as what <Leader>ww would do and <C-W>1 will do
+the same as what <Leader>wp would do.
+
+
+5. LICENCE ~
+                                                              *winswap-licence*
+BSD Zero Clause License
+
+Copyright © 2025 Peter Kenny
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+The software is provided "as is" and the author disclaims all warranties with
+regard to this software including all implied warranties of merchantability
+and fitness. In no event shall the author be liable for any special, direct,
+indirect, or consequential damages or any damages whatsoever resulting from
+loss of use, data or profits, whether in an action of contract, negligence or
+other tortious action, arising out of or in connection with the use or
+performance of this software.
+
+ vim: set expandtab sts=2 ts=2 sw=2 tw=78 ft=help norl:
