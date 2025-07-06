@@ -2,6 +2,10 @@
 :doctype: article
 :icons: font
 :sectnums:
+ifdef::env-github[]
+:important-caption: :heavy_exclamation_mark:
+:note-caption: :information_source:
+endif::env-github[]
 :toc:
 //there's no need for a toc title in GitHub/HTML, but in PDF there is
 ifndef::backend-html5,env-github[:toc-title: Contents]
