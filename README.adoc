@@ -49,6 +49,7 @@ are carried across, whereas in Vim9-winswap they are.
 [TBC - Recording of examples, including showing swapping terminal, help
 windows, multiple tabs, and so on.]
 
+[#how-to-swap-windows]
 == How to swap windows
 
 1. Navigate to the first window you want to swap
@@ -59,6 +60,7 @@ windows, multiple tabs, and so on.]
 NOTE: `<Leader>ww` is not fixed - you can choose whatever you want - but it is
 enabled if you used `g:winswap_opt_maps = true` in your (Vim9) .vimrc/_vimrc.
 
+[#how-to-put-clone-a-window]
 == How to put (clone) a window
 
 1. Navigate to the window you want to put
@@ -93,7 +95,8 @@ to `Winswap`.
 === Using `g:winswap_opt_maps`
 
 If you are satisfied with using `<Leader>ww` and `<Leader>wp`, as explained
-in <<_how_to_swap_windows>> and <<_how_to_put_clone_a_window>>, all you need
+in <<how-to-swap-windows,How to swap windows>>
+and <<how-to-put-clone-a-window,How to put (clone) a window>>, all you need
 to do is to include the following in your .vimrc/_vimrc:
 
 [source,vim]
