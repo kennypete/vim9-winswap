@@ -3,7 +3,7 @@ winswap-<Plug>(Winswap_ww)	winswap.txt	/*winswap-<Plug>(Winswap_ww)*
 winswap-about	winswap.txt	/*winswap-about*
 winswap-commands	winswap.txt	/*winswap-commands*
 winswap-custom-mappings	winswap.txt	/*winswap-custom-mappings*
-winswap-licence	winswap.txt	/*winswap-licence*
+winswap-license	winswap.txt	/*winswap-license*
 winswap-mappings	winswap.txt	/*winswap-mappings*
 winswap-optional-mappings	winswap.txt	/*winswap-optional-mappings*
 winswap-overview	winswap.txt	/*winswap-overview*

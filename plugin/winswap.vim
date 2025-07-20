@@ -21,7 +21,7 @@ nnoremap <silent> <Plug>(Winswap_wp) <ScriptCmd>winswap.Stat('put')<CR>
 if g:winswap_opt_maps
   # Mark when there is no window marked; swaps if there is a window marked
   nnoremap <silent> <Leader>ww <Plug>(Winswap_ww)
-  # Put/clone (provided there is a marked window)
+  # Put/clone (provided there is already a marked window)
   nnoremap <silent> <Leader>wp <Plug>(Winswap_wp)
 endif
 

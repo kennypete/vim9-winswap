@@ -15,7 +15,7 @@ def MarkWindowSwap(): void
 enddef
 
 def SaveWindowSettings(): dict<any>
-  final SETTINGS: dict<any> = {}
+  final settings: dict<any> = {}
   const LOCAL_SETTINGS: list<string> = ['arabic',
     'breakindent', 'breakindentopt', 'colorcolumn', 'concealcursor',
     'conceallevel', 'cursorbind', 'cursorcolumn', 'cursorline',
@@ -28,13 +28,12 @@ def SaveWindowSettings(): dict<any>
     'winfixheight', 'winfixwidth', 'wrap']
   for setting in LOCAL_SETTINGS
     try
-      SETTINGS[setting] = eval($"&{setting}")
+      settings[setting] = eval($"&{setting}")
     catch
-      # Silently skip settings that don't exist in this Vim version
-      # echo v:exception
+      echo v:exception
     endtry
   endfor
-  return SETTINGS
+  return settings
 enddef
 
 def RestoreWindowSettings(settings: dict<any>): void
@@ -46,8 +45,7 @@ def RestoreWindowSettings(settings: dict<any>): void
         execute $"vim9 &{setting} = {value}"
       endif
     catch
-      # Silently skip settings that can't be restored
-      # echo v:exception
+      echo v:exception
     endtry
   endfor
 enddef
@@ -100,7 +98,7 @@ def DoWindowPut(): void
   ClearMarkedWindowNum()
 enddef
 
-# Stat ... do the mark, swap, or put (clone)
+# Stat ... do the mark, swap, or put/clone
 export def Stat(arg: string = 'swap'): void
   if markedWinNum == null_list
     MarkWindowSwap()

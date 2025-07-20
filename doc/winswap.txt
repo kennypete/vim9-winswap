@@ -5,7 +5,7 @@
 	2. Overview					|winswap-overview|
 	3. Commands					|winswap-commands|
 	4. Mappings					|winswap-mappings|
-	5. Licence					|winswap-licence|
+	5. License					|winswap-license|
 
 =============================================================================
 
@@ -15,29 +15,29 @@
 Vim's built-in window commands like CTRL-W r, CTRL-W x, and CTRL-W T
 work well in many scenarios.  However, there are limitations.  For example,
 CTRL-W r, "only works within the row or column of windows that the current
-window is in". Also, there is no ability to move windows to another existing
+window is in".  Also, there is no ability to move windows to another existing
 tab.
 
 vim9-winswap enables swaping or cloning Vim windows easily by:
 
-1. Swapping a chosen window with any other window, including windows in other
-   existing tabs, or
-2. Putting (cloning) a chosen window into any other window, leaving the
-   "yanked" window as-is, or
-3. Using command, :Winswap, which will swap two chosen windows.
+  1. Swapping a chosen window with any other window, including windows in
+     other existing tabs, or
+  2. Putting (cloning) a chosen window into any other window, leaving the
+     "yanked" window as-is, or
+  3. Using command, :Winswap, which will swap two chosen windows.
 
 In all instances:
 
-* Window-local options are carried across to the moved or cloned window.
-  That is, options like |'list'|, |'colorcolumn'|, and |'spell'|, which are
-  exclusively window-local.
-* The state of the marked/"yanked" window is cleared following a swap or put.
+  * Window-local options are carried across to the moved or cloned window.
+    That is, options like |'list'|, |'colorcolumn'|, and |'spell'|, which are
+    exclusively window-local.
+  * The state of the marked/"yanked" window is cleared following a swap/put.
 
-NOTE: The plugin https://github.com/wesQ3/vim-windowswap is a
-legacy vimscript plugin, which provides some similar functionality for
-swapping windows.  The (optional) swap key mapping, <Leader>ww, has been
-used.  There are improvements in vim9-winswap too; e.g., ensuring
-the window-local settings are carried across.
+	NOTE: The plugin https://github.com/wesQ3/vim-windowswap is a
+	legacy vimscript plugin, which provides some similar functionality for
+	swapping windows.  The (optional) swap key mapping, <Leader>ww, has
+	been used.  There are improvements in vim9-winswap too; e.g., ensuring
+	the window-local settings are carried across.
 
 
 2. OVERVIEW ~
@@ -49,16 +49,17 @@ To swap two windows:
 3. Navigate to the second window you want to swap with the first.
 4. Press <Leader>ww again to swap the windows.
 
-For putting (cloning) a window:
+To put (clone) a window:
 
 1. Navigate to the window you want to put.
 2. Use <Leader>ww to mark the window and remember its settings.
 3. Navigate to the window you want to substitute.
 4. Use <Leader>wp to substitute the window with the cloned content
 
-Note: The <Leader> mappings, above, are enabled by g:winswap_opt_maps = true
-      Put that in your .vimrc if you want to use them - they are not "on" by
-      default.  If you want to map your own keys, see |winswap-custom-maps|.
+	Note: The <Leader> mappings, above, are enabled by
+	g:winswap_opt_maps = true.  Put that in your .vimrc if you want
+	to use them - they are not "on" by default.  If you want to map
+	your own keys, see |winswap-custom-mappings|.
 
 
 3. COMMANDS ~
@@ -128,8 +129,8 @@ the same as what <Leader>wp would do.
 		enddef
 
 
-5. LICENCE ~
-                                                              *winswap-licence*
+5. LICENSE ~
+                                                              *winswap-license*
 BSD Zero Clause License
 
 Copyright © 2025 Peter Kenny

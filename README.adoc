@@ -47,18 +47,22 @@ settings are carried across.
 
 == Demonstrations
 
+[#Demo-1]
 === Demo 1: Swapping windows
 
 image::https://i.postimg.cc/ZRY1BV0m/vim9-winswap-demo1.gif[Demo1,1055,609]
 
+[#Demo-2]
 === Demo 2: Putting a window
 
 image::https://i.postimg.cc/tJYwDJhm/vim9-winswap-demo2.gif[Demo2,1055,609]
 
+[#Demo-3]
 === Demo 3: Using :Winswap to swap windows
 
 image::https://i.postimg.cc/rmh7Sxtr/vim9-winswap-demo3.gif[Demo3,1055,609]
 
+[#Demo-4]
 === Demo 4: Swapping windows between tabs
 
 image::https://i.postimg.cc/D0HDNh6f/vim9-winswap-demo4.gif[Demo4,1055,609]
@@ -66,7 +70,7 @@ image::https://i.postimg.cc/D0HDNh6f/vim9-winswap-demo4.gif[Demo4,1055,609]
 [#how-to-swap-windows]
 == How to swap windows
 
-As shown in Demo 1 and Demo 4:
+As shown in <<Demo-1,Demo 1>> and <<Demo-4,Demo 4>>:
 
 1. Navigate to the first window you want to swap.
 2. `<Leader>ww` to mark the first window and remember its settings.
@@ -79,7 +83,7 @@ enabled if you used `g:winswap_opt_maps = true` in your (Vim9) .vimrc/_vimrc.
 [#how-to-put-clone-a-window]
 == How to put (clone) a window
 
-As shown in Demo 2:
+As shown in <<Demo-2,Demo 2>>:
 
 1. Navigate to the window you want to put.
 2. `<Leader>ww` to mark the window and remember its settings.
@@ -91,7 +95,7 @@ enabled if you used `g:winswap_opt_maps = true` in your (Vim9) .vimrc/_vimrc.
 
 == How to swap windows by window number
 
-As shown in Demo 3, if you know the window numbers of the two windows
+As shown in <<Demo-3,Demo 3>>, if you know the window numbers of the two windows
 you want to swap, you can use the `:Winswap` command:
 
 [source,vim]
