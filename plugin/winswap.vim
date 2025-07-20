@@ -1,6 +1,6 @@
-if (v:version < 802 || (v:version == 802 && !has('patch3555')))
-  " # Vim 8.2 < patch 3555 handling:
-  echo "vim9-winswap requires Vim9 (or 8.2 with patch 3555)"
+if (v:version < 802 || (v:version == 802 && !has('patch4883')))
+  " Vim 8.2 < patch 4883 handling:
+  echo "vim9-winswap requires Vim9 (or 8.2 with patch 4833)"
   finish
 endif
 
@@ -30,3 +30,5 @@ command! -nargs=+ Winswap winswap.SwapByWinNums(<f-args>)
 cnoreabbrev Ws Winswap
 
 g:loaded_winswap = true
+
+# vim: ts=2 sts=2 et ft=vim nowrap

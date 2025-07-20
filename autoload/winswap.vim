@@ -100,7 +100,7 @@ def DoWindowPut(): void
   ClearMarkedWindowNum()
 enddef
 
-# Stat ... do the mark, swap, or put (clone), now
+# Stat ... do the mark, swap, or put (clone)
 export def Stat(arg: string = 'swap'): void
   if markedWinNum == null_list
     MarkWindowSwap()
@@ -134,3 +134,4 @@ export def SwapByWinNums(win1: string, win2: string): void
   DoWindowSwap()
 enddef
 
+# vim: ts=2 sts=2 et ft=vim nowrap
